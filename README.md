@@ -82,19 +82,14 @@ You’ll get:
 
 ---
 
-## 📸 Example
-![Workflow Diagram](RGB_to_HSV_Color_Clusters.png)
-
----
-
 ## 🧑‍💻 Author
-**[Your Name]**  
+**Spiros Staridas**  
 Developed for map color analysis and visualization in QGIS.
 
 ---
 
 ## 📄 License
-Choose a license (e.g. MIT, GPL-3.0, or CC-BY-SA) and mention it here.
+CC BY-NC-ND 4.0
 
 ---
 
