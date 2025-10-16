@@ -52,9 +52,9 @@ Three QGIS style files (`.qml`) are provided in the `/styles/` folder:
 
 | File | Description |
 |------|--------------|
-| `ColorPalette_Style1.qml` | Standard layout with labeled color swatches. |
-| `ColorPalette_Style2.qml` | Minimalistic style emphasizing color contrast. |
-| `ColorPalette_Style3.qml` | Grid layout optimized for map presentation. |
+| `ColorPalette_Style1.qml` | HEX |
+| `ColorPalette_Style2.qml` | RGB |
+| `ColorPalette_Style3.qml` | HSV |
 
 To apply a style:
 1. In QGIS, right-click the **Color Palette** layer → **Properties → Symbology → Load Style…**  
