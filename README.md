@@ -202,7 +202,7 @@ The **Color Palette (map)** is built with the **GRASS `v.mkgrid`** algorithm:
 ---
 
 ## 📖 License
-*(Add your license here, e.g., MIT or GPLv3)*
+CC BY-NC-ND 4.0
 
 ---
 
