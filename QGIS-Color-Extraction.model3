@@ -1,0 +1,1262 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="grass7:v.mkgrid_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="grass:v.mkgrid" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="289" type="double"/>
+        <Option name="component_pos_y" value="504" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Color Palette (map)" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="435" type="double"/>
+      <Option name="component_pos_y" value="435" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="grass7:v.mkgrid_1" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="Color Palette (map)" type="Map">
+          <Option name="child_id" value="grass7:v.mkgrid_1" type="QString"/>
+          <Option name="color" value="" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option name="color" value="" type="QString"/>
+            <Option name="component_description" value="" type="QString"/>
+            <Option name="component_height" value="60" type="double"/>
+            <Option name="component_pos_x" value="0" type="double"/>
+            <Option name="component_pos_y" value="0" type="double"/>
+            <Option name="component_width" value="100" type="double"/>
+            <Option name="outputs_collapsed" value="true" type="bool"/>
+            <Option name="parameters_collapsed" value="true" type="bool"/>
+          </Option>
+          <Option name="component_description" value="Color Palette (map)" type="QString"/>
+          <Option name="component_height" value="30" type="double"/>
+          <Option name="component_pos_x" value="640" type="double"/>
+          <Option name="component_pos_y" value="555" type="double"/>
+          <Option name="component_width" value="200" type="double"/>
+          <Option name="default_value" type="Map">
+            <Option name="class" value="QgsProcessingOutputLayerDefinition" type="QString"/>
+            <Option name="create_options" type="Map">
+              <Option name="fileEncoding" value="windows-1252" type="QString"/>
+            </Option>
+            <Option name="sink" type="Map">
+              <Option name="active" value="true" type="bool"/>
+              <Option name="type" value="1" type="int"/>
+              <Option name="val" value="" type="QString"/>
+            </Option>
+          </Option>
+          <Option name="mandatory" value="true" type="bool"/>
+          <Option name="name" value="Color Palette (map)" type="QString"/>
+          <Option name="output_name" value="map" type="QString"/>
+          <Option name="outputs_collapsed" value="true" type="bool"/>
+          <Option name="parameters_collapsed" value="true" type="bool"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="-a" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="-h" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="GRASS_OUTPUT_TYPE_PARAMETER" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="GRASS_REGION_PARAMETER" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="GRASS_VECTOR_DSCO" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="GRASS_VECTOR_EXPORT_NOCAT" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="GRASS_VECTOR_LCO" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="angle" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="double"/>
+          </Option>
+        </Option>
+        <Option name="box" type="List">
+          <Option type="Map">
+            <Option name="expression" value="with_variable('Xmin', x_min(layer_property(@map,'extent')),&#xd;&#xa;with_variable('Xmax', x_max(layer_property(@map,'extent')),&#xd;&#xa;with_variable('Ymin', y_min(layer_property(@map,'extent')),&#xd;&#xa;with_variable('Ymax', y_max(layer_property(@map,'extent')),&#xd;&#xa;with_variable('size',&#xd;&#xa;&#xd;&#xa;case&#xd;&#xa;when @color_palette_map_placement in (0, 2)&#xd;&#xa;then (@Xmax - @Xmin) / @number_of_colors_clusters&#xd;&#xa;&#xd;&#xa;when @color_palette_map_placement in (1, 3)&#xd;&#xa;then (@Ymax - @Ymin) / @number_of_colors_clusters&#xd;&#xa;end,&#xd;&#xa;&#xd;&#xa;concat(@size, ',', @size)&#xd;&#xa;&#xd;&#xa;)))))&#xd;&#xa;&#xd;&#xa;-- [0] Top&#xd;&#xa;-- [1] Right&#xd;&#xa;-- [2] Bottom&#xd;&#xa;-- [3] Left" type="QString"/>
+            <Option name="source" value="3" type="int"/>
+          </Option>
+        </Option>
+        <Option name="breaks" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="coordinates" type="List">
+          <Option type="Map">
+            <Option name="expression" value="with_variable('Xmin', x_min(layer_property(@map,'extent')),&#xd;&#xa;with_variable('Xmax', x_max(layer_property(@map,'extent')),&#xd;&#xa;with_variable('Ymin', y_min(layer_property(@map,'extent')),&#xd;&#xa;with_variable('Ymax', y_max(layer_property(@map,'extent')),&#xd;&#xa;with_variable('size', (@Ymax - @Ymin) / @number_of_colors_clusters,&#xd;&#xa;&#xd;&#xa;case&#xd;&#xa;when @color_palette_map_placement = 0&#xd;&#xa;then concat(@Xmin, ',', @Ymax + @size / 2)&#xd;&#xa;&#xd;&#xa;when @color_palette_map_placement = 1&#xd;&#xa;then concat(@Xmax + @size / 2, ',', @Ymin)&#xd;&#xa;&#xd;&#xa;when @color_palette_map_placement = 2&#xd;&#xa;then concat(@Xmin, ',', @Ymin - @size * 1.25)&#xd;&#xa;&#xd;&#xa;when @color_palette_map_placement = 3&#xd;&#xa;then concat(@Xmin - @size * 1.5, ',', @Ymin)&#xd;&#xa;end&#xd;&#xa;&#xd;&#xa;)))))&#xd;&#xa;&#xd;&#xa;-- [0] Top&#xd;&#xa;-- [1] Right&#xd;&#xa;-- [2] Bottom&#xd;&#xa;-- [3] Left&#xd;&#xa;" type="QString"/>
+            <Option name="source" value="3" type="int"/>
+          </Option>
+        </Option>
+        <Option name="grid" type="List">
+          <Option type="Map">
+            <Option name="expression" value="case&#xd;&#xa;when @color_palette_map_placement in (0, 2)&#xd;&#xa;then concat(to_string(1), ',', to_string(@number_of_colors_clusters))&#xd;&#xa;&#xd;&#xa;when @color_palette_map_placement in (1, 3)&#xd;&#xa;then concat(to_string(@number_of_colors_clusters), ',', to_string(1))&#xd;&#xa;end&#xd;&#xa;&#xd;&#xa;-- [0] Top&#xd;&#xa;-- [1] Right&#xd;&#xa;-- [2] Bottom&#xd;&#xa;-- [3] Left&#xd;&#xa;" type="QString"/>
+            <Option name="source" value="3" type="int"/>
+          </Option>
+        </Option>
+        <Option name="position" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="type" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="2" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:exporttospreadsheet_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:exporttospreadsheet" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1155" type="double"/>
+        <Option name="component_pos_y" value="610" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Export to spreadsheet" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="1215" type="double"/>
+      <Option name="component_pos_y" value="705" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:exporttospreadsheet_1" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="Color Table XLSX" type="Map">
+          <Option name="child_id" value="native:exporttospreadsheet_1" type="QString"/>
+          <Option name="color" value="" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option name="color" value="198,221,232,255,rgb:0.77647058823529413,0.8666666666666667,0.90980392156862744,1" type="QString"/>
+            <Option name="component_description" value="" type="QString"/>
+            <Option name="component_height" value="90" type="double"/>
+            <Option name="component_pos_x" value="1770" type="double"/>
+            <Option name="component_pos_y" value="825" type="double"/>
+            <Option name="component_width" value="180" type="double"/>
+            <Option name="outputs_collapsed" value="true" type="bool"/>
+            <Option name="parameters_collapsed" value="true" type="bool"/>
+          </Option>
+          <Option name="component_description" value="Color Table XLSX" type="QString"/>
+          <Option name="component_height" value="30" type="double"/>
+          <Option name="component_pos_x" value="1425" type="double"/>
+          <Option name="component_pos_y" value="795" type="double"/>
+          <Option name="component_width" value="210" type="double"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" value="true" type="bool"/>
+          <Option name="name" value="Color Table XLSX" type="QString"/>
+          <Option name="output_name" value="OUTPUT" type="QString"/>
+          <Option name="outputs_collapsed" value="true" type="bool"/>
+          <Option name="parameters_collapsed" value="true" type="bool"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FORMATTED_VALUES" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="LAYERS" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:refactorfields_1" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OVERWRITE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="true" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="USE_ALIAS" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:modelerrastercalc_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:modelerrastercalc" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="196,185,224,255,rgb:0.7686274509803922,0.72549019607843135,0.8784313725490196,1" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="76.05270877221648" type="double"/>
+        <Option name="component_pos_y" value="199.6317719305412" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Hue" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="434.99999999999994" type="double"/>
+      <Option name="component_pos_y" value="195" type="double"/>
+      <Option name="component_width" value="209.99999999999986" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:modelerrastercalc_1" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="CELL_SIZE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="CRS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="crs" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="EXPRESSION" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="IF((MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) - MIN(MIN(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;)) = 0, 0, IF(MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) = &quot;A@1&quot;, IF(60 * ((&quot;A@2&quot; - &quot;A@3&quot;) / (MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) - MIN(MIN(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;))) &lt; 0, 60 * ((&quot;A@2&quot; - &quot;A@3&quot;) / (MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) - MIN(MIN(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;))) + 360, 60 * ((&quot;A@2&quot; - &quot;A@3&quot;) / (MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) - MIN(MIN(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;)))), IF(MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) = &quot;A@2&quot;, 60 * ((&quot;A@3&quot; - &quot;A@1&quot;) / (MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) - MIN(MIN(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;)) + 2), 60 * ((&quot;A@1&quot; - &quot;A@2&quot;) / (MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) - MIN(MIN(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;)) + 4))))" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="EXTENT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="extent" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="LAYERS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="map" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:modelerrastercalc_2" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:modelerrastercalc" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="244,164,194,255,rgb:0.95686274509803926,0.64313725490196083,0.76078431372549016,1" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="227.4184431100451" type="double"/>
+        <Option name="component_pos_y" value="325.21343191548544" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Saturation" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="675" type="double"/>
+      <Option name="component_pos_y" value="195" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:modelerrastercalc_2" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="CELL_SIZE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="CRS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="crs" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="EXPRESSION" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="IF(MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) = 0, 0, 100 * ((MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;) - MIN(MIN(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;)) / MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot;)))" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="EXTENT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="extent" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="LAYERS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="map" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:modelerrastercalc_3" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:modelerrastercalc" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="824.8347465127633" type="double"/>
+        <Option name="component_pos_y" value="397.5699499503004" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Value" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="915" type="double"/>
+      <Option name="component_pos_y" value="195" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:modelerrastercalc_3" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="CELL_SIZE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="CRS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="crs" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="EXPRESSION" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="100 * (MAX(MAX(&quot;A@1&quot;,&quot;A@2&quot;),&quot;A@3&quot; )/255) " type="QString"/>
+          </Option>
+        </Option>
+        <Option name="EXTENT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="extent" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="LAYERS" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="map" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:refactorfields_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:refactorfields" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1155" type="double"/>
+        <Option name="component_pos_y" value="730" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Refactor Fields 1" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="975" type="double"/>
+      <Option name="component_pos_y" value="555" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:refactorfields_1" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="Color Table" type="Map">
+          <Option name="child_id" value="native:refactorfields_1" type="QString"/>
+          <Option name="color" value="" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option name="color" value="198,221,232,255,rgb:0.77647058823529413,0.8666666666666667,0.90980392156862744,1" type="QString"/>
+            <Option name="component_description" value="" type="QString"/>
+            <Option name="component_height" value="150" type="double"/>
+            <Option name="component_pos_x" value="1770" type="double"/>
+            <Option name="component_pos_y" value="645" type="double"/>
+            <Option name="component_width" value="180" type="double"/>
+            <Option name="outputs_collapsed" value="true" type="bool"/>
+            <Option name="parameters_collapsed" value="true" type="bool"/>
+          </Option>
+          <Option name="component_description" value="Color Table" type="QString"/>
+          <Option name="component_height" value="30" type="double"/>
+          <Option name="component_pos_x" value="1305" type="double"/>
+          <Option name="component_pos_y" value="645" type="double"/>
+          <Option name="component_width" value="210" type="double"/>
+          <Option name="default_value" type="Map">
+            <Option name="class" value="QgsProcessingOutputLayerDefinition" type="QString"/>
+            <Option name="create_options" type="Map">
+              <Option name="fileEncoding" value="windows-1252" type="QString"/>
+            </Option>
+            <Option name="sink" type="Map">
+              <Option name="active" value="true" type="bool"/>
+              <Option name="type" value="1" type="int"/>
+              <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+            </Option>
+          </Option>
+          <Option name="mandatory" value="true" type="bool"/>
+          <Option name="name" value="Color Table" type="QString"/>
+          <Option name="output_name" value="OUTPUT" type="QString"/>
+          <Option name="outputs_collapsed" value="true" type="bool"/>
+          <Option name="parameters_collapsed" value="true" type="bool"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELDS_MAPPING" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="List">
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="&quot;ClusterID&quot;+1" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="id" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="&quot;Elements&quot;" type="QString"/>
+                <Option name="length" value="16" type="int"/>
+                <Option name="name" value="count" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="&quot;Std.Dev.&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="sd" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="&quot;OUTPUT&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="H" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="&quot;OUTPUT_1&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="S" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="&quot;OUTPUT_2&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="V" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="with_variable('H',&quot;OUTPUT&quot;/60,with_variable('S',&quot;OUTPUT_1&quot;/100,with_variable('V',&quot;OUTPUT_2&quot;/100,with_variable('C',@V*@S,with_variable('X',@C*(1-abs(@H%2-1)),with_variable('M',@V-@C,round((CASE WHEN @H>=0 AND @H&lt;1 THEN @C+@M WHEN @H>=1 AND @H&lt;2 THEN @X+@M WHEN @H>=2 AND @H&lt;3 THEN 0+@M WHEN @H>=3 AND @H&lt;4 THEN 0+@M WHEN @H>=4 AND @H&lt;5 THEN @X+@M WHEN @H>=5 AND @H&lt;6 THEN @C+@M ELSE 0 END)*255)))))))" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="R" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="with_variable('H',&quot;OUTPUT&quot;/60,with_variable('S',&quot;OUTPUT_1&quot;/100,with_variable('V',&quot;OUTPUT_2&quot;/100,with_variable('C',@V*@S,with_variable('X',@C*(1-abs(@H%2-1)),with_variable('M',@V-@C,round((CASE WHEN @H>=0 AND @H&lt;1 THEN @X+@M WHEN @H>=1 AND @H&lt;2 THEN @C+@M WHEN @H>=2 AND @H&lt;3 THEN @C+@M WHEN @H>=3 AND @H&lt;4 THEN @X+@M WHEN @H>=4 AND @H&lt;5 THEN 0+@M WHEN @H>=5 AND @H&lt;6 THEN 0+@M ELSE 0 END)*255)))))))" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="G" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="with_variable('H',&quot;OUTPUT&quot;/60,with_variable('S',&quot;OUTPUT_1&quot;/100,with_variable('V',&quot;OUTPUT_2&quot;/100,with_variable('C',@V*@S,with_variable('X',@C*(1-abs(@H%2-1)),with_variable('M',@V-@C,round((CASE WHEN @H>=0 AND @H&lt;1 THEN 0+@M WHEN @H>=1 AND @H&lt;2 THEN 0+@M WHEN @H>=2 AND @H&lt;3 THEN @X+@M WHEN @H>=3 AND @H&lt;4 THEN @C+@M WHEN @H>=4 AND @H&lt;5 THEN @C+@M WHEN @H>=5 AND @H&lt;6 THEN @X+@M ELSE 0 END)*255)))))))" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="B" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="with_variable('H',&quot;OUTPUT&quot;/60,with_variable('S',&quot;OUTPUT_1&quot;/100,with_variable('V',&quot;OUTPUT_2&quot;/100,with_variable('C',@V*@S,with_variable('X',@C*(1-abs(@H%2-1)),with_variable('M',@V-@C,with_variable('r1',CASE WHEN @H>=0 AND @H&lt;1 THEN @C WHEN @H>=1 AND @H&lt;2 THEN @X WHEN @H>=2 AND @H&lt;3 THEN 0 WHEN @H>=3 AND @H&lt;4 THEN 0 WHEN @H>=4 AND @H&lt;5 THEN @X WHEN @H>=5 AND @H&lt;6 THEN @C ELSE 0 END,with_variable('g1',CASE WHEN @H>=0 AND @H&lt;1 THEN @X WHEN @H>=1 AND @H&lt;2 THEN @C WHEN @H>=2 AND @H&lt;3 THEN @C WHEN @H>=3 AND @H&lt;4 THEN @X WHEN @H>=4 AND @H&lt;5 THEN 0 WHEN @H>=5 AND @H&lt;6 THEN 0 ELSE 0 END,with_variable('b1',CASE WHEN @H>=0 AND @H&lt;1 THEN 0 WHEN @H>=1 AND @H&lt;2 THEN 0 WHEN @H>=2 AND @H&lt;3 THEN @X WHEN @H>=3 AND @H&lt;4 THEN @C WHEN @H>=4 AND @H&lt;5 THEN @C WHEN @H>=5 AND @H&lt;6 THEN @X ELSE 0 END,with_variable('r',@r1+@M,with_variable('g',@g1+@M,with_variable('b',@b1+@M,with_variable('k',1-array_max(array(@r,@g,@b)),if(@k=1,0,((1-@r-@k)/(1-@k))*100))))))))))))))" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="C" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="with_variable('H',&quot;OUTPUT&quot;/60,with_variable('S',&quot;OUTPUT_1&quot;/100,with_variable('V',&quot;OUTPUT_2&quot;/100,with_variable('C',@V*@S,with_variable('X',@C*(1-abs(@H%2-1)),with_variable('M',@V-@C,with_variable('r1',CASE WHEN @H>=0 AND @H&lt;1 THEN @C WHEN @H>=1 AND @H&lt;2 THEN @X WHEN @H>=2 AND @H&lt;3 THEN 0 WHEN @H>=3 AND @H&lt;4 THEN 0 WHEN @H>=4 AND @H&lt;5 THEN @X WHEN @H>=5 AND @H&lt;6 THEN @C ELSE 0 END,with_variable('g1',CASE WHEN @H>=0 AND @H&lt;1 THEN @X WHEN @H>=1 AND @H&lt;2 THEN @C WHEN @H>=2 AND @H&lt;3 THEN @C WHEN @H>=3 AND @H&lt;4 THEN @X WHEN @H>=4 AND @H&lt;5 THEN 0 WHEN @H>=5 AND @H&lt;6 THEN 0 ELSE 0 END,with_variable('b1',CASE WHEN @H>=0 AND @H&lt;1 THEN 0 WHEN @H>=1 AND @H&lt;2 THEN 0 WHEN @H>=2 AND @H&lt;3 THEN @X WHEN @H>=3 AND @H&lt;4 THEN @C WHEN @H>=4 AND @H&lt;5 THEN @C WHEN @H>=5 AND @H&lt;6 THEN @X ELSE 0 END,with_variable('r',@r1+@M,with_variable('g',@g1+@M,with_variable('b',@b1+@M,with_variable('k',1-array_max(array(@r,@g,@b)),if(@k=1,0,((1-@g-@k)/(1-@k))*100))))))))))))))" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="M" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="with_variable('H',&quot;OUTPUT&quot;/60,with_variable('S',&quot;OUTPUT_1&quot;/100,with_variable('V',&quot;OUTPUT_2&quot;/100,with_variable('C',@V*@S,with_variable('X',@C*(1-abs(@H%2-1)),with_variable('M',@V-@C,with_variable('r1',CASE WHEN @H>=0 AND @H&lt;1 THEN @C WHEN @H>=1 AND @H&lt;2 THEN @X WHEN @H>=2 AND @H&lt;3 THEN 0 WHEN @H>=3 AND @H&lt;4 THEN 0 WHEN @H>=4 AND @H&lt;5 THEN @X WHEN @H>=5 AND @H&lt;6 THEN @C ELSE 0 END,with_variable('g1',CASE WHEN @H>=0 AND @H&lt;1 THEN @X WHEN @H>=1 AND @H&lt;2 THEN @C WHEN @H>=2 AND @H&lt;3 THEN @C WHEN @H>=3 AND @H&lt;4 THEN @X WHEN @H>=4 AND @H&lt;5 THEN 0 WHEN @H>=5 AND @H&lt;6 THEN 0 ELSE 0 END,with_variable('b1',CASE WHEN @H>=0 AND @H&lt;1 THEN 0 WHEN @H>=1 AND @H&lt;2 THEN 0 WHEN @H>=2 AND @H&lt;3 THEN @X WHEN @H>=3 AND @H&lt;4 THEN @C WHEN @H>=4 AND @H&lt;5 THEN @C WHEN @H>=5 AND @H&lt;6 THEN @X ELSE 0 END,with_variable('r',@r1+@M,with_variable('g',@g1+@M,with_variable('b',@b1+@M,with_variable('k',1-array_max(array(@r,@g,@b)),if(@k=1,0,((1-@b-@k)/(1-@k))*100))))))))))))))" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="Y" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="with_variable('H',&quot;OUTPUT&quot;/60,with_variable('S',&quot;OUTPUT_1&quot;/100,with_variable('V',&quot;OUTPUT_2&quot;/100,with_variable('C',@V*@S,with_variable('X',@C*(1-abs(@H%2-1)),with_variable('M',@V-@C,with_variable('r1',CASE WHEN @H>=0 AND @H&lt;1 THEN @C WHEN @H>=1 AND @H&lt;2 THEN @X WHEN @H>=2 AND @H&lt;3 THEN 0 WHEN @H>=3 AND @H&lt;4 THEN 0 WHEN @H>=4 AND @H&lt;5 THEN @X WHEN @H>=5 AND @H&lt;6 THEN @C ELSE 0 END,with_variable('g1',CASE WHEN @H>=0 AND @H&lt;1 THEN @X WHEN @H>=1 AND @H&lt;2 THEN @C WHEN @H>=2 AND @H&lt;3 THEN @C WHEN @H>=3 AND @H&lt;4 THEN @X WHEN @H>=4 AND @H&lt;5 THEN 0 WHEN @H>=5 AND @H&lt;6 THEN 0 ELSE 0 END,with_variable('b1',CASE WHEN @H>=0 AND @H&lt;1 THEN 0 WHEN @H>=1 AND @H&lt;2 THEN 0 WHEN @H>=2 AND @H&lt;3 THEN @X WHEN @H>=3 AND @H&lt;4 THEN @C WHEN @H>=4 AND @H&lt;5 THEN @C WHEN @H>=5 AND @H&lt;6 THEN @X ELSE 0 END,with_variable('r',@r1+@M,with_variable('g',@g1+@M,with_variable('b',@b1+@M,(1-array_max(array(@r,@g,@b)))*100))))))))))))" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="K" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="with_variable('H',&quot;OUTPUT&quot;/60,with_variable('S',&quot;OUTPUT_1&quot;/100,with_variable('V',&quot;OUTPUT_2&quot;/100,with_variable('C',@V*@S,with_variable('X',@C*(1-abs(@H%2-1)),with_variable('M',@V-@C,with_variable('R',round((CASE WHEN @H>=0 AND @H&lt;1 THEN @C+@M WHEN @H>=1 AND @H&lt;2 THEN @X+@M WHEN @H>=2 AND @H&lt;3 THEN 0+@M WHEN @H>=3 AND @H&lt;4 THEN 0+@M WHEN @H>=4 AND @H&lt;5 THEN @X+@M WHEN @H>=5 AND @H&lt;6 THEN @C+@M ELSE 0 END)*255),with_variable('G',round((CASE WHEN @H>=0 AND @H&lt;1 THEN @X+@M WHEN @H>=1 AND @H&lt;2 THEN @C+@M WHEN @H>=2 AND @H&lt;3 THEN @C+@M WHEN @H>=3 AND @H&lt;4 THEN @X+@M WHEN @H>=4 AND @H&lt;5 THEN 0+@M WHEN @H>=5 AND @H&lt;6 THEN 0+@M ELSE 0 END)*255),with_variable('B',round((CASE WHEN @H>=0 AND @H&lt;1 THEN 0+@M WHEN @H>=1 AND @H&lt;2 THEN 0+@M WHEN @H>=2 AND @H&lt;3 THEN @X+@M WHEN @H>=3 AND @H&lt;4 THEN @C+@M WHEN @H>=4 AND @H&lt;5 THEN @C+@M WHEN @H>=5 AND @H&lt;6 THEN @X+@M ELSE 0 END)*255),with_variable('D','0123456789ABCDEF',with_variable('r',floor(max(0,min(255,coalesce(@R,0)))),with_variable('g',floor(max(0,min(255,coalesce(@G,0)))),with_variable('b',floor(max(0,min(255,coalesce(@B,0)))),'#'||substr(@D,floor(@r/16)+1,1)||substr(@D,(@r%16)+1,1)||substr(@D,floor(@g/16)+1,1)||substr(@D,(@g%16)+1,1)||substr(@D,floor(@b/16)+1,1)||substr(@D,(@b%16)+1,1))))))))))))))" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="HEX" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="10" type="int"/>
+                <Option name="type_name" value="text" type="QString"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="sagang:kmeansclusteringforrasters_1" type="QString"/>
+            <Option name="output_name" value="STATISTICS" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:refactorfields_2" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:refactorfields" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="415.7612403164467" type="double"/>
+        <Option name="component_pos_y" value="967.956991875266" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Refactor Fields 2" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="1125" type="double"/>
+      <Option name="component_pos_y" value="765" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:refactorfields_2" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELDS_MAPPING" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="List">
+              <Option type="Map">
+                <Option name="alias" type="invalid"/>
+                <Option name="comment" type="invalid"/>
+                <Option name="expression" value="concat(&quot;id&quot;,' ',&quot;R&quot;,' ',&quot;G&quot;,' ',&quot;B&quot;,' ',255,' ',&quot;id&quot;)&#xd;&#xa;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="CLR" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="10" type="int"/>
+                <Option name="type_name" value="text" type="QString"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:refactorfields_1" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:savefeatures_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:savefeatures" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1412.0110648148147" type="double"/>
+        <Option name="component_pos_y" value="1007.3078703703702" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Export CLR" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="1305" type="double"/>
+      <Option name="component_pos_y" value="885" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:savefeatures_1" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="HSV Raster Layer CLR" type="Map">
+          <Option name="child_id" value="native:savefeatures_1" type="QString"/>
+          <Option name="color" value="" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option name="color" value="" type="QString"/>
+            <Option name="component_description" value="" type="QString"/>
+            <Option name="component_height" value="60" type="double"/>
+            <Option name="component_pos_x" value="0" type="double"/>
+            <Option name="component_pos_y" value="0" type="double"/>
+            <Option name="component_width" value="100" type="double"/>
+            <Option name="outputs_collapsed" value="true" type="bool"/>
+            <Option name="parameters_collapsed" value="true" type="bool"/>
+          </Option>
+          <Option name="component_description" value="HSV Raster Layer CLR" type="QString"/>
+          <Option name="component_height" value="30" type="double"/>
+          <Option name="component_pos_x" value="1515" type="double"/>
+          <Option name="component_pos_y" value="975" type="double"/>
+          <Option name="component_width" value="210" type="double"/>
+          <Option name="default_value" value="C:/Users/spist/Downloads/HSV Raster Layer CLR.csv" type="QString"/>
+          <Option name="mandatory" value="true" type="bool"/>
+          <Option name="name" value="HSV Raster Layer CLR" type="QString"/>
+          <Option name="output_name" value="OUTPUT" type="QString"/>
+          <Option name="outputs_collapsed" value="true" type="bool"/>
+          <Option name="parameters_collapsed" value="true" type="bool"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="ACTION_ON_EXISTING_FILE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="DATASOURCE_OPTIONS" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:refactorfields_2" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="LAYER_NAME" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="LAYER_OPTIONS" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="sagang:kmeansclusteringforrasters_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="sagang:kmeansclusteringforrasters" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="549.109084224716" type="double"/>
+        <Option name="component_pos_y" value="346.4253368580149" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="K-Means Clustering for Rasters" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="794.9999999999999" type="double"/>
+      <Option name="component_pos_y" value="345" type="double"/>
+      <Option name="component_width" value="449.99999999999983" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="sagang:kmeansclusteringforrasters_1" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="HSV Raster Layer (Clusters)" type="Map">
+          <Option name="child_id" value="sagang:kmeansclusteringforrasters_1" type="QString"/>
+          <Option name="color" value="" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option name="color" value="198,221,232,255,rgb:0.77647058823529413,0.8666666666666667,0.90980392156862744,1" type="QString"/>
+            <Option name="component_description" value="" type="QString"/>
+            <Option name="component_height" value="90" type="double"/>
+            <Option name="component_pos_x" value="1140" type="double"/>
+            <Option name="component_pos_y" value="375" type="double"/>
+            <Option name="component_width" value="180" type="double"/>
+            <Option name="outputs_collapsed" value="true" type="bool"/>
+            <Option name="parameters_collapsed" value="true" type="bool"/>
+          </Option>
+          <Option name="component_description" value="HSV Raster Layer (Clusters)" type="QString"/>
+          <Option name="component_height" value="30" type="double"/>
+          <Option name="component_pos_x" value="1005" type="double"/>
+          <Option name="component_pos_y" value="435" type="double"/>
+          <Option name="component_width" value="210" type="double"/>
+          <Option name="default_value" type="Map">
+            <Option name="class" value="QgsProcessingOutputLayerDefinition" type="QString"/>
+            <Option name="create_options" type="Map">
+              <Option name="fileEncoding" value="windows-1252" type="QString"/>
+            </Option>
+            <Option name="sink" type="Map">
+              <Option name="active" value="true" type="bool"/>
+              <Option name="type" value="1" type="int"/>
+              <Option name="val" value="" type="QString"/>
+            </Option>
+          </Option>
+          <Option name="mandatory" value="true" type="bool"/>
+          <Option name="name" value="HSV Raster Layer (Clusters)" type="QString"/>
+          <Option name="output_name" value="CLUSTER" type="QString"/>
+          <Option name="outputs_collapsed" value="true" type="bool"/>
+          <Option name="parameters_collapsed" value="true" type="bool"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="GRIDS" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:modelerrastercalc_1" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+          <Option type="Map">
+            <Option name="child_id" value="native:modelerrastercalc_2" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+          <Option type="Map">
+            <Option name="child_id" value="native:modelerrastercalc_3" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INITIALIZE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAXITER" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="50" type="int"/>
+          </Option>
+        </Option>
+        <Option name="METHOD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="2" type="int"/>
+          </Option>
+        </Option>
+        <Option name="NCLUSTER" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="number_of_colors_clusters" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="NORMALISE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="true" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="OLDVERSION" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="false" type="bool"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues" type="Map">
+    <Option name="color_palette_map" type="QgsProcessingOutputLayerDefinition">
+      <Option type="Map">
+        <Option name="create_options" type="Map">
+          <Option name="fileEncoding" value="windows-1252" type="QString"/>
+        </Option>
+        <Option name="sink" type="Map">
+          <Option name="active" value="true" type="bool"/>
+          <Option name="type" value="1" type="int"/>
+          <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="color_palette_map_placement" value="0" type="int"/>
+    <Option name="color_table" type="QgsProcessingOutputLayerDefinition">
+      <Option type="Map">
+        <Option name="create_options" type="Map">
+          <Option name="fileEncoding" value="windows-1252" type="QString"/>
+        </Option>
+        <Option name="sink" type="Map">
+          <Option name="active" value="true" type="bool"/>
+          <Option name="type" value="1" type="int"/>
+          <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="color_table_xlsx" value="C:/Users/spist/Downloads/Color Table.xlsx" type="QString"/>
+    <Option name="crs" type="QgsCoordinateReferenceSystem">
+      <spatialrefsys nativeFormat="Wkt">
+        <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
+        <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+        <srsid>3857</srsid>
+        <srid>3857</srid>
+        <authid>EPSG:3857</authid>
+        <description>WGS 84 / Pseudo-Mercator</description>
+        <projectionacronym>merc</projectionacronym>
+        <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </Option>
+    <Option name="extent" value="944.588300000,1395.116700000,-1201.492400000,-577.683700000 [EPSG:3857]" type="QString"/>
+    <Option name="hsv_raster_layer_clusters" type="QgsProcessingOutputLayerDefinition">
+      <Option type="Map">
+        <Option name="create_options" type="Map">
+          <Option name="fileEncoding" value="windows-1252" type="QString"/>
+        </Option>
+        <Option name="sink" type="Map">
+          <Option name="active" value="true" type="bool"/>
+          <Option name="type" value="1" type="int"/>
+          <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="map" value="Nuova_Pianta_Topografica_della_Citta_e_del_Porto_di_Genova_85e59f0a_9bd6_4094_a4ac_dceafa24aa57" type="QString"/>
+  </Option>
+  <Option name="groupBoxes"/>
+  <Option name="help"/>
+  <Option name="internal_version" value="Version2" type="QString"/>
+  <Option name="modelVariables"/>
+  <Option name="model_group" value="" type="QString"/>
+  <Option name="model_name" value="QGIS-Color-Extraction" type="QString"/>
+  <Option name="outputGroup" value="Color" type="QString"/>
+  <Option name="outputOrder" type="StringList">
+    <Option value="sagang:kmeansclusteringforrasters_1:CLUSTER" type="QString"/>
+    <Option value="native:savefeatures_1:OUTPUT" type="QString"/>
+    <Option value="grass7:v.mkgrid_1:map" type="QString"/>
+    <Option value="native:exporttospreadsheet_1:OUTPUT" type="QString"/>
+    <Option value="native:refactorfields_1:OUTPUT" type="QString"/>
+  </Option>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="color_palette_map" type="Map">
+      <Option name="create_by_default" value="true" type="bool"/>
+      <Option name="data_type" value="-1" type="int"/>
+      <Option name="default" type="QgsProcessingOutputLayerDefinition">
+        <Option type="Map">
+          <Option name="create_options" type="Map">
+            <Option name="fileEncoding" value="windows-1252" type="QString"/>
+          </Option>
+          <Option name="sink" type="Map">
+            <Option name="active" value="true" type="bool"/>
+            <Option name="type" value="1" type="int"/>
+            <Option name="val" value="" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Color Palette (map)" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option name="_modelChildId" value="grass7:v.mkgrid_1" type="QString"/>
+        <Option name="_modelChildOutputName" value="Color Palette (map)" type="QString"/>
+        <Option name="_modelChildProvider" value="grass" type="QString"/>
+      </Option>
+      <Option name="name" value="color_palette_map" type="QString"/>
+      <Option name="parameter_type" value="vectorDestination" type="QString"/>
+      <Option name="supports_non_file_outputs" value="false" type="bool"/>
+    </Option>
+    <Option name="color_palette_map_placement" type="Map">
+      <Option name="allow_multiple" value="false" type="bool"/>
+      <Option name="default" type="List">
+        <Option value="1" type="int"/>
+      </Option>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Color Palette (map) Placement" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata"/>
+      <Option name="name" value="color_palette_map_placement" type="QString"/>
+      <Option name="options" type="StringList">
+        <Option value="Top" type="QString"/>
+        <Option value="Right" type="QString"/>
+        <Option value="Bottom" type="QString"/>
+        <Option value="Left" type="QString"/>
+      </Option>
+      <Option name="parameter_type" value="enum" type="QString"/>
+      <Option name="uses_static_strings" value="false" type="bool"/>
+    </Option>
+    <Option name="color_table" type="Map">
+      <Option name="create_by_default" value="true" type="bool"/>
+      <Option name="data_type" value="-1" type="int"/>
+      <Option name="default" type="QgsProcessingOutputLayerDefinition">
+        <Option type="Map">
+          <Option name="create_options" type="Map">
+            <Option name="fileEncoding" value="windows-1252" type="QString"/>
+          </Option>
+          <Option name="sink" type="Map">
+            <Option name="active" value="true" type="bool"/>
+            <Option name="type" value="1" type="int"/>
+            <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Color Table" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option name="_modelChildId" value="native:refactorfields_1" type="QString"/>
+        <Option name="_modelChildOutputName" value="Color Table" type="QString"/>
+        <Option name="_modelChildProvider" value="native" type="QString"/>
+      </Option>
+      <Option name="name" value="color_table" type="QString"/>
+      <Option name="parameter_type" value="sink" type="QString"/>
+      <Option name="supports_append" value="true" type="bool"/>
+      <Option name="supports_non_file_outputs" value="true" type="bool"/>
+    </Option>
+    <Option name="color_table_xlsx" type="Map">
+      <Option name="create_by_default" value="true" type="bool"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Color Table XLSX" type="QString"/>
+      <Option name="file_filter" value="Microsoft Excel (*.xlsx);;Open Document Spreadsheet (*.ods)" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option name="_modelChildId" value="native:exporttospreadsheet_1" type="QString"/>
+        <Option name="_modelChildOutputName" value="Color Table XLSX" type="QString"/>
+        <Option name="_modelChildProvider" value="native" type="QString"/>
+        <Option name="widget_wrapper" type="Map">
+          <Option name="dontconfirmoverwrite" value="true" type="bool"/>
+        </Option>
+      </Option>
+      <Option name="name" value="color_table_xlsx" type="QString"/>
+      <Option name="parameter_type" value="fileDestination" type="QString"/>
+      <Option name="supports_non_file_outputs" value="true" type="bool"/>
+    </Option>
+    <Option name="crs" type="Map">
+      <Option name="default" value="EPSG:3857" type="QString"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="CRS" type="QString"/>
+      <Option name="flags" value="8" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata"/>
+      <Option name="name" value="crs" type="QString"/>
+      <Option name="parameter_type" value="crs" type="QString"/>
+    </Option>
+    <Option name="extent" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Extent" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata"/>
+      <Option name="name" value="extent" type="QString"/>
+      <Option name="parameter_type" value="extent" type="QString"/>
+    </Option>
+    <Option name="hsv_raster_layer_clr" type="Map">
+      <Option name="create_by_default" value="true" type="bool"/>
+      <Option name="default" value="C:/Users/spist/Downloads/HSV Raster Layer CLR.csv" type="QString"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="HSV Raster Layer CLR" type="QString"/>
+      <Option name="file_filter" value="GeoPackage (*.gpkg *.GPKG);;ESRI Shapefile (*.shp *.SHP);;(Geo)Arrow (*.arrow *.feather *.arrows *.ipc *.ARROW *.FEATHER *.ARROWS *.IPC);;(Geo)Parquet (*.parquet *.PARQUET);;AutoCAD DXF (*.dxf *.DXF);;Comma Separated Value [CSV] (*.csv *.CSV);;ESRI File Geodatabase (*.gdb *.GDB);;FlatGeobuf (*.fgb *.FGB);;Geography Markup Language [GML] (*.gml *.GML);;GeoJSON - Newline Delimited (*.geojsonl *.geojsons *.json *.GEOJSONL *.GEOJSONS *.JSON);;GeoJSON (*.geojson *.GEOJSON);;GeoRSS (*.xml *.XML);;GPS eXchange Format [GPX] (*.gpx *.GPX);;Keyhole Markup Language [KML] (*.kml *.KML);;Mapinfo TAB (*.tab *.TAB);;Microstation DGN (*.dgn *.DGN);;MS Office Open XML spreadsheet [XLSX] (*.xlsx *.XLSX);;Open Document Spreadsheet [ODS] (*.ods *.ODS);;PostgreSQL SQL dump (*.sql *.SQL);;S-57 Base file (*.000 *.000);;SQLite (*.sqlite *.SQLITE)" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option name="_modelChildId" value="native:savefeatures_1" type="QString"/>
+        <Option name="_modelChildOutputName" value="HSV Raster Layer CLR" type="QString"/>
+        <Option name="_modelChildProvider" value="native" type="QString"/>
+      </Option>
+      <Option name="name" value="hsv_raster_layer_clr" type="QString"/>
+      <Option name="parameter_type" value="fileDestination" type="QString"/>
+      <Option name="supports_non_file_outputs" value="true" type="bool"/>
+    </Option>
+    <Option name="hsv_raster_layer_clusters" type="Map">
+      <Option name="create_by_default" value="true" type="bool"/>
+      <Option name="default" type="QgsProcessingOutputLayerDefinition">
+        <Option type="Map">
+          <Option name="create_options" type="Map">
+            <Option name="fileEncoding" value="windows-1252" type="QString"/>
+          </Option>
+          <Option name="sink" type="Map">
+            <Option name="active" value="true" type="bool"/>
+            <Option name="type" value="1" type="int"/>
+            <Option name="val" value="" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="HSV Raster Layer (Clusters)" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option name="_modelChildId" value="sagang:kmeansclusteringforrasters_1" type="QString"/>
+        <Option name="_modelChildOutputName" value="HSV Raster Layer (Clusters)" type="QString"/>
+        <Option name="_modelChildProvider" value="sagang" type="QString"/>
+      </Option>
+      <Option name="name" value="hsv_raster_layer_clusters" type="QString"/>
+      <Option name="parameter_type" value="rasterDestination" type="QString"/>
+      <Option name="supports_non_file_outputs" value="false" type="bool"/>
+    </Option>
+    <Option name="map" type="Map">
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Map" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata"/>
+      <Option name="name" value="map" type="QString"/>
+      <Option name="parameter_type" value="raster" type="QString"/>
+    </Option>
+    <Option name="number_of_colors_clusters" type="Map">
+      <Option name="data_type" value="0" type="int"/>
+      <Option name="default" value="10" type="double"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Number of Colors (Clusters)" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="max" value="100" type="double"/>
+      <Option name="metadata"/>
+      <Option name="min" value="0" type="double"/>
+      <Option name="name" value="number_of_colors_clusters" type="QString"/>
+      <Option name="parameter_type" value="number" type="QString"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder" type="StringList">
+    <Option value="map" type="QString"/>
+    <Option value="extent" type="QString"/>
+    <Option value="number_of_colors_clusters" type="QString"/>
+    <Option value="color_palette_map_placement" type="QString"/>
+    <Option value="crs" type="QString"/>
+  </Option>
+  <Option name="parameters" type="Map">
+    <Option name="color_palette_map_placement" type="Map">
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="254,211,175,255,rgb:0.99607843137254903,0.82745098039215681,0.68627450980392157,1" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="120" type="double"/>
+        <Option name="component_pos_x" value="165" type="double"/>
+        <Option name="component_pos_y" value="540" type="double"/>
+        <Option name="component_width" value="210" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="color_palette_map_placement" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="135" type="double"/>
+      <Option name="component_pos_y" value="345" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="name" value="color_palette_map_placement" type="QString"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+    </Option>
+    <Option name="crs" type="Map">
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="254,211,175,255,rgb:0.99607843137254903,0.82745098039215681,0.68627450980392157,1" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="510" type="double"/>
+        <Option name="component_pos_y" value="60" type="double"/>
+        <Option name="component_width" value="180" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="crs" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="555" type="double"/>
+      <Option name="component_pos_y" value="45" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="name" value="crs" type="QString"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+    </Option>
+    <Option name="extent" type="Map">
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="254,211,175,255,rgb:0.99607843137254903,0.82745098039215681,0.68627450980392157,1" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="90" type="double"/>
+        <Option name="component_pos_x" value="1142" type="double"/>
+        <Option name="component_pos_y" value="225" type="double"/>
+        <Option name="component_width" value="184" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="extent" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="915" type="double"/>
+      <Option name="component_pos_y" value="45" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="name" value="extent" type="QString"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+    </Option>
+    <Option name="map" type="Map">
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="254,211,175,255,rgb:0.99607843137254903,0.82745098039215681,0.68627450980392157,1" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="90" type="double"/>
+        <Option name="component_pos_x" value="60" type="double"/>
+        <Option name="component_pos_y" value="75" type="double"/>
+        <Option name="component_width" value="120" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="map" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="135" type="double"/>
+      <Option name="component_pos_y" value="45" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="name" value="map" type="QString"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+    </Option>
+    <Option name="number_of_colors_clusters" type="Map">
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="254,211,175,255,rgb:0.99607843137254903,0.82745098039215681,0.68627450980392157,1" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="90" type="double"/>
+        <Option name="component_pos_x" value="90" type="double"/>
+        <Option name="component_pos_y" value="225" type="double"/>
+        <Option name="component_width" value="120" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="number_of_colors_clusters" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="135" type="double"/>
+      <Option name="component_pos_y" value="255" type="double"/>
+      <Option name="component_width" value="210" type="double"/>
+      <Option name="name" value="number_of_colors_clusters" type="QString"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+    </Option>
+  </Option>
+</Option>
